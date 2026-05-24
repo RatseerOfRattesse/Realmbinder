@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "realmbinder",
+	"version": "1.0.0",
+	"name": "Realmbinder",
+	"description": "A mod aiming to make the Drehmal magic system a reality.",
+	"authors": [
+		"RatseerORattesse"
+	],
+	"contact": {
+		"homepage": "https://ratseerofrattesse.github.io/",
+		"sources": "https://github.com/RatseerOfRattesse/Realmbinder"
+	},
+	"license": "MIT",
+	"icon": "assets/realmbinder/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.ratseerofrattesse.Realmbinder"
+		],
+		"client": [
+			"net.ratseerofrattesse.client.RealmbinderClient"
+		],
+		"fabric-datagen": [
+			"net.ratseerofrattesse.client.RealmbinderDataGenerator"
+		]
+	},
+	"mixins": [
+		"realmbinder.mixins.json",
+		{
+			"config": "realmbinder.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.2",
+		"minecraft": "~26.1.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
