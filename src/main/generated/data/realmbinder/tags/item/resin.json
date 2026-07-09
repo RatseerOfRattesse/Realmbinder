@@ -1,0 +1,17 @@
+{
+  "replace": true,
+  "values": [
+    {
+      "id": "#c:bricks/resin",
+      "required": false
+    },
+    {
+      "id": "#c:clumps/resin",
+      "required": false
+    },
+    {
+      "id": "#c:storage_blocks/resin",
+      "required": false
+    }
+  ]
+}

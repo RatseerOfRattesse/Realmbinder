@@ -1,0 +1,17 @@
+{
+  "item.realmbinder.debugger": "Debugger",
+  "item.realmbinder.precise_runecarver_lens": "Precise Runecarver Lens",
+  "item.realmbinder.runecarver_lens": "Runecarver Lens",
+  "realmbinder.tab": "Realmbinder",
+  "tooltip.realmbinder.debugger": "A tool used for debugging Realmbinder",
+  "tooltip.realmbinder.hands": "[Mainhand/Offhand]",
+  "tooltip.realmbinder.potentia.format": "Potentia is formatted as <current potentia>/<capacity>.",
+  "tooltip.realmbinder.potentia.info": "Potentia: ",
+  "tooltip.realmbinder.potentia.manifests": "Potentia manifests as visions of the Spheres.",
+  "tooltip.realmbinder.precise_runecarver_lens": "Can interpret potentia as numeral values.",
+  "tooltip.realmbinder.runecarver_lens": "Shows potentia in an object.",
+  "tooltip.realmbinder.runecarver_lens.hands": "Aim at entity/block to display potentia.",
+  "tooltip.realmbinder.runecarver_lens.selected_inventory": "Hover over item in inventory to display potentia.",
+  "tooltip.realmbinder.selected_inventory": "[Selected in Inventory]",
+  "tooltip.realmbinder.shift": "Press §7[Shift]§r for more info."
+}

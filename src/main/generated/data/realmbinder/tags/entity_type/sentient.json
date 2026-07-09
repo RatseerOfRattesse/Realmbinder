@@ -1,0 +1,20 @@
+{
+  "replace": true,
+  "values": [
+    {
+      "id": "#minecraft:illager",
+      "required": false
+    },
+    {
+      "id": "#minecraft:illager_friends",
+      "required": false
+    },
+    "minecraft:villager",
+    "minecraft:player",
+    "minecraft:piglin",
+    "minecraft:ravager",
+    "minecraft:piglin_brute",
+    "minecraft:enderman",
+    "minecraft:witch"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "replace": true,
+  "values": [
+    "minecraft:snow_golem",
+    "minecraft:iron_golem",
+    "minecraft:copper_golem",
+    "minecraft:blaze",
+    "minecraft:breeze",
+    "minecraft:vex",
+    "minecraft:guardian",
+    "minecraft:elder_guardian"
+  ]
+}

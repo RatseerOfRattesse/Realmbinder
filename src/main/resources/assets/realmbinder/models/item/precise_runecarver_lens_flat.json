@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "realmbinder:item/precise_runecarver_lens_flat"
+  }
+}

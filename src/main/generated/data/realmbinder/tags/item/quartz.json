@@ -1,0 +1,13 @@
+{
+  "replace": true,
+  "values": [
+    {
+      "id": "#c:gems/quartz",
+      "required": false
+    },
+    {
+      "id": "#c:ores/quartz",
+      "required": false
+    }
+  ]
+}

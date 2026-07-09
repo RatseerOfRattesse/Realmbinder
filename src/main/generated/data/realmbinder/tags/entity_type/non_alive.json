@@ -1,0 +1,52 @@
+{
+  "replace": true,
+  "values": [
+    "minecraft:area_effect_cloud",
+    "minecraft:mannequin",
+    "minecraft:armor_stand",
+    "minecraft:arrow",
+    "minecraft:egg",
+    "minecraft:ender_pearl",
+    "minecraft:end_crystal",
+    "minecraft:evoker_fangs",
+    "minecraft:eye_of_ender",
+    "minecraft:experience_orb",
+    "minecraft:falling_block",
+    "minecraft:experience_bottle",
+    "minecraft:fishing_bobber",
+    "minecraft:interaction",
+    "minecraft:lightning_bolt",
+    "minecraft:leash_knot",
+    "minecraft:llama_spit",
+    "minecraft:marker",
+    "minecraft:painting",
+    "minecraft:tnt",
+    "minecraft:text_display",
+    "minecraft:shulker_bullet",
+    "minecraft:trident",
+    {
+      "id": "#c:boats",
+      "required": false
+    },
+    {
+      "id": "#c:item_frames",
+      "required": false
+    },
+    {
+      "id": "#c:minecarts",
+      "required": false
+    },
+    {
+      "id": "#minecraft:arrows",
+      "required": false
+    },
+    {
+      "id": "#minecraft:impact_projectiles",
+      "required": false
+    },
+    {
+      "id": "#minecraft:redirectable_projectile",
+      "required": false
+    }
+  ]
+}

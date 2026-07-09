@@ -1,0 +1,29 @@
+{
+  "replace": true,
+  "values": [
+    {
+      "id": "#realmbinder:loruhn",
+      "required": false
+    },
+    {
+      "id": "#realmbinder:lorahn",
+      "required": false
+    },
+    {
+      "id": "#realmbinder:lodahr",
+      "required": false
+    },
+    {
+      "id": "#realmbinder:torahn",
+      "required": false
+    },
+    {
+      "id": "#realmbinder:loveruhkt",
+      "required": false
+    },
+    {
+      "id": "#realmbinder:void",
+      "required": false
+    }
+  ]
+}

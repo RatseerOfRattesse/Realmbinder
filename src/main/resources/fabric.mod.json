@@ -16,15 +16,19 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"net.ratseerofrattesse.Realmbinder"
+			"net.ratseerofrattesse.realmbinder.Realmbinder"
 		],
 		"client": [
-			"net.ratseerofrattesse.client.RealmbinderClient"
+			"net.ratseerofrattesse.realmbinder.client.RealmbinderClient"
+		],
+		"hud": [
+			"net.ratseerofrattesse.realmbinder.client.rendering.HudRenderingEntrypoint"
 		],
 		"fabric-datagen": [
-			"net.ratseerofrattesse.client.RealmbinderDataGenerator"
+			"net.ratseerofrattesse.realmbinder.client.RealmbinderDataGenerator"
 		]
 	},
+	"accessWidener": "realmbinder.classtweaker",
 	"mixins": [
 		"realmbinder.mixins.json",
 		{

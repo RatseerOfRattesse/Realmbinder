@@ -1,0 +1,10 @@
+{
+  "replace": true,
+  "values": [
+    "minecraft:happy_ghast",
+    "minecraft:strider",
+    "minecraft:magma_cube",
+    "minecraft:ghast",
+    "minecraft:hoglin"
+  ]
+}
