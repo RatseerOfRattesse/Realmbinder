@@ -43,9 +43,11 @@ public class ModItems {
             .component(ModComponents.POTENTIA, new PotentiaComponent(400,400))
             .component(ModComponents.TOOLTIP, new TooltipComponent("precise_runecarver_lens,gray","realmbinder"))
             .component(ModComponents.CONDITIONAL_TOOLTIP, new ConditionalTooltipComponent(
-                    "potentia.format,dark_purple " +
+                    "potentia.format,gold " +
+                            "empty,gray " +
                     "hands,gray " +
                     "runecarver_lens.hands,gold " +
+                            "empty,gray " +
                     "selected_inventory,gray " +
                     "runecarver_lens.selected_inventory,gold","realmbinder", "shift:false"))
             .stacksTo(1));
@@ -53,9 +55,11 @@ public class ModItems {
             .component(ModComponents.POTENTIA, new PotentiaComponent(200,200))
             .component(ModComponents.TOOLTIP, new TooltipComponent("runecarver_lens,gray","realmbinder"))
             .component(ModComponents.CONDITIONAL_TOOLTIP, new ConditionalTooltipComponent(
-                    "potentia.manifests,dark_purple " +
+                    "potentia.manifests,gold " +
+                            "empty,gray " +
                             "hands,gray " +
                             "runecarver_lens.hands,gold " +
+                            "empty,gray " +
                             "selected_inventory,gray " +
                             "runecarver_lens.selected_inventory,gold","realmbinder", "shift:false"))
             .stacksTo(1));
