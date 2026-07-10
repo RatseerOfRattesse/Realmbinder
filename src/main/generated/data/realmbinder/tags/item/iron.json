@@ -29,6 +29,7 @@
       "id": "#c:storage_blocks/iron",
       "required": false
     },
+    "realmbinder:iron_chisel",
     "minecraft:bucket",
     "minecraft:water_bucket",
     "minecraft:lava_bucket",

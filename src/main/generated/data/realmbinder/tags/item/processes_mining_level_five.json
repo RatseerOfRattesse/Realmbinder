@@ -1,0 +1,10 @@
+{
+  "replace": true,
+  "values": [
+    "realmbinder:mendarum_chisel",
+    {
+      "id": "#realmbinder:processes_mining_level_six",
+      "required": false
+    }
+  ]
+}

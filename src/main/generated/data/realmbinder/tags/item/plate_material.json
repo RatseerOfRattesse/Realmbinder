@@ -1,0 +1,133 @@
+{
+  "fabric:remove": [
+    "#realmbinder:chisels"
+  ],
+  "replace": true,
+  "values": [
+    {
+      "id": "#c:stones",
+      "required": false
+    },
+    {
+      "id": "#c:end_stones",
+      "required": false
+    },
+    {
+      "id": "#c:netherracks",
+      "required": false
+    },
+    {
+      "id": "#c:natural_woods",
+      "required": false
+    },
+    {
+      "id": "#c:natural_logs",
+      "required": false
+    },
+    {
+      "id": "#c:stripped_woods",
+      "required": false
+    },
+    {
+      "id": "#c:stripped_logs",
+      "required": false
+    },
+    {
+      "id": "#c:leathers",
+      "required": false
+    },
+    {
+      "id": "#c:bones",
+      "required": false
+    },
+    "minecraft:bone_block",
+    {
+      "id": "#minecraft:wool",
+      "required": false
+    },
+    {
+      "id": "#minecraft:wool_carpets",
+      "required": false
+    },
+    {
+      "id": "#c:rods/blaze",
+      "required": false
+    },
+    {
+      "id": "#c:rods/breeze",
+      "required": false
+    },
+    {
+      "id": "#c:ender_pearls",
+      "required": false
+    },
+    {
+      "id": "#realmbinder:iron",
+      "required": false
+    },
+    {
+      "id": "#realmbinder:copper",
+      "required": false
+    },
+    {
+      "id": "#realmbinder:gold",
+      "required": false
+    },
+    {
+      "id": "#realmbinder:diamond",
+      "required": false
+    },
+    {
+      "id": "#realmbinder:emerald",
+      "required": false
+    },
+    {
+      "id": "#realmbinder:amethyst",
+      "required": false
+    },
+    {
+      "id": "#realmbinder:netherite",
+      "required": false
+    },
+    {
+      "id": "#realmbinder:mendarum",
+      "required": false
+    },
+    {
+      "id": "#realmbinder:rehntite",
+      "required": false
+    },
+    {
+      "id": "#realmbinder:lapis",
+      "required": false
+    },
+    {
+      "id": "#realmbinder:redstone",
+      "required": false
+    },
+    {
+      "id": "#realmbinder:quartz",
+      "required": false
+    },
+    {
+      "id": "#realmbinder:coal",
+      "required": false
+    },
+    {
+      "id": "#realmbinder:resin",
+      "required": false
+    },
+    {
+      "id": "#realmbinder:prismarine",
+      "required": false
+    },
+    {
+      "id": "#c:obsidians",
+      "required": false
+    },
+    {
+      "id": "#c:obsidians/crying",
+      "required": false
+    }
+  ]
+}

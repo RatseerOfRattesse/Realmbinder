@@ -19,11 +19,21 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerators itemModelGenerators) {
+
         itemModelGenerators.generateFlatItem(ModItems.DEBUGGER, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.IRON_CHISEL, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.COPPER_CHISEL, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.GOLD_CHISEL, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.DIAMOND_CHISEL, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.NETHERITE_CHISEL, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.REHNTITE_CHISEL, ModelTemplates.FLAT_ITEM);
+
+        itemModelGenerators.generateFlatItem(ModItems.MATERIAL_PLATE, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ModItems.REHNTITE_INGOT, ModelTemplates.FLAT_ITEM);
     }
 
     @Override
     public String getName() {
-        return "ModModelProvider";
+        return "RealmbinderModelProvider";
     }
 }

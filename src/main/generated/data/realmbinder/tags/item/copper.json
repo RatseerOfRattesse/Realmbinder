@@ -28,6 +28,7 @@
     {
       "id": "#c:storage_blocks/copper",
       "required": false
-    }
+    },
+    "realmbinder:copper_chisel"
   ]
 }

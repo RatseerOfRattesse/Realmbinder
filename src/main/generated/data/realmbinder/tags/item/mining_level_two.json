@@ -1,0 +1,21 @@
+{
+  "replace": true,
+  "values": [
+    {
+      "id": "#realmbinder:gold",
+      "required": false
+    },
+    {
+      "id": "#realmbinder:emerald",
+      "required": false
+    },
+    {
+      "id": "#realmbinder:diamond",
+      "required": false
+    },
+    {
+      "id": "#realmbinder:redstone",
+      "required": false
+    }
+  ]
+}

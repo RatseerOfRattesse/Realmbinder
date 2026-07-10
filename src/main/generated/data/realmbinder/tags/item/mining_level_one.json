@@ -1,0 +1,21 @@
+{
+  "replace": true,
+  "values": [
+    {
+      "id": "#realmbinder:iron",
+      "required": false
+    },
+    {
+      "id": "#realmbinder:copper",
+      "required": false
+    },
+    {
+      "id": "#realmbinder:coal",
+      "required": false
+    },
+    {
+      "id": "#realmbinder:lapis",
+      "required": false
+    }
+  ]
+}

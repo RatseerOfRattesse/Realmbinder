@@ -24,6 +24,7 @@
     {
       "id": "#c:storage_blocks/gold",
       "required": false
-    }
+    },
+    "realmbinder:gold_chisel"
   ]
 }

@@ -13,7 +13,9 @@ public class ModTooltipProviders {
     }
 
     public static void register() {
-        ItemComponentTooltipProviderRegistry.addAfter(DataComponents.DAMAGE, ModComponents.TOOLTIP);
+        ItemComponentTooltipProviderRegistry.addAfter(DataComponents.DAMAGE, ModComponents.PLATE_MATERIAL);
+        ItemComponentTooltipProviderRegistry.addAfter(ModComponents.PLATE_MATERIAL, ModComponents.VANILLA_COLOUR);
+        ItemComponentTooltipProviderRegistry.addAfter(ModComponents.VANILLA_COLOUR, ModComponents.TOOLTIP);
         ItemComponentTooltipProviderRegistry.addAfter(ModComponents.TOOLTIP, ModComponents.CONDITIONAL_TOOLTIP);
     }
 }

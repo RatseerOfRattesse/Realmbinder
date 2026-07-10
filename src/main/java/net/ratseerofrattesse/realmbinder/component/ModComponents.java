@@ -1,5 +1,6 @@
 package net.ratseerofrattesse.realmbinder.component;
 
+import com.mojang.serialization.Codec;
 import net.minecraft.core.Registry;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -15,7 +16,7 @@ public class ModComponents {
 
     public static final DataComponentType<PotentiaComponent> POTENTIA = Registry.register(
             BuiltInRegistries.DATA_COMPONENT_TYPE,
-            Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "hidden_potentia"),
+            Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "potentia"),
             DataComponentType.<PotentiaComponent>builder().persistent(PotentiaComponent.CODEC).build()
     );
 
@@ -27,8 +28,20 @@ public class ModComponents {
 
     public static final DataComponentType<ConditionalTooltipComponent> CONDITIONAL_TOOLTIP = Registry.register(
             BuiltInRegistries.DATA_COMPONENT_TYPE,
-            Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "shift_down"),
+            Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "conditional_tooltip"),
             DataComponentType.<ConditionalTooltipComponent>builder().persistent(ConditionalTooltipComponent.CODEC).build()
+    );
+
+    public static final DataComponentType<PlateMaterialComponent> PLATE_MATERIAL = Registry.register(
+            BuiltInRegistries.DATA_COMPONENT_TYPE,
+            Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "plate_material"),
+            DataComponentType.<PlateMaterialComponent>builder().persistent(PlateMaterialComponent.CODEC).build()
+    );
+
+    public static final DataComponentType<VanillaColourComponent> VANILLA_COLOUR = Registry.register(
+            BuiltInRegistries.DATA_COMPONENT_TYPE,
+            Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "vanilla_colour"),
+            DataComponentType.<VanillaColourComponent>builder().persistent(VanillaColourComponent.CODEC).build()
     );
 
 }

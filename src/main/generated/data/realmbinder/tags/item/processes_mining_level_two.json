@@ -1,0 +1,10 @@
+{
+  "replace": true,
+  "values": [
+    "realmbinder:iron_chisel",
+    {
+      "id": "#realmbinder:processes_mining_level_three",
+      "required": false
+    }
+  ]
+}

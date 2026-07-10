@@ -3,9 +3,12 @@ package net.ratseerofrattesse.realmbinder.client;
 import com.mojang.blaze3d.platform.InputConstants;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.screen.v1.ScreenEvents;
+import net.minecraft.client.color.item.ItemTintSources;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
+import net.ratseerofrattesse.realmbinder.Realmbinder;
 import net.ratseerofrattesse.realmbinder.client.particle.ModParticleProviders;
 import net.ratseerofrattesse.realmbinder.client.rendering.HudRenderingEntrypoint;
 import net.ratseerofrattesse.realmbinder.component.ConditionalTooltipComponent;
@@ -21,6 +24,7 @@ public class RealmbinderClient implements ClientModInitializer {
 		HudRenderingEntrypoint.initialize();
 		ModParticleProviders.initialize();
 
+		ItemTintSources.ID_MAPPER.put(Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "vanilla_colour"), VanillaColourTintSource.MAP_CODEC);
 		//Conditional Tooltip Detection
 		ScreenEvents.BEFORE_INIT.register((client, screen, scaledWidth, scaledHeight) -> {
 			if (client.player != null) {

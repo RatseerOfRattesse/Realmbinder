@@ -1,0 +1,12 @@
+{
+  "replace": true,
+  "values": [
+    "realmbinder:iron_chisel",
+    "realmbinder:copper_chisel",
+    "realmbinder:gold_chisel",
+    "realmbinder:diamond_chisel",
+    "realmbinder:mendarum_chisel",
+    "realmbinder:netherite_chisel",
+    "realmbinder:rehntite_chisel"
+  ]
+}

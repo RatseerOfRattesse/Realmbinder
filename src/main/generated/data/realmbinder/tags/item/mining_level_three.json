@@ -1,0 +1,13 @@
+{
+  "replace": true,
+  "values": [
+    {
+      "id": "#realmbinder:netherite",
+      "required": false
+    },
+    {
+      "id": "#c:obsidians",
+      "required": false
+    }
+  ]
+}

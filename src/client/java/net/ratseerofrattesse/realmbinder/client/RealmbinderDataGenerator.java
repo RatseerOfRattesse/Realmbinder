@@ -13,5 +13,6 @@ public class RealmbinderDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModBadEnglishLangProvider::new);
 		pack.addProvider(ModItemTagProvider::new);
 		pack.addProvider(ModEntityTagProvider::new);
+		pack.addProvider(ModRecipeProvider::new);
 	}
 }

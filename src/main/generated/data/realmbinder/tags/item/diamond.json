@@ -12,6 +12,7 @@
     {
       "id": "#c:storage_blocks/diamond",
       "required": false
-    }
+    },
+    "realmbinder:diamond_chisel"
   ]
 }

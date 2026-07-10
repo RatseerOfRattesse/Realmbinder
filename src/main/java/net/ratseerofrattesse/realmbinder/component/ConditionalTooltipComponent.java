@@ -8,8 +8,10 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.TooltipProvider;
+import net.ratseerofrattesse.realmbinder.Realmbinder;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -26,8 +28,13 @@ public record ConditionalTooltipComponent(String lines, String modid, String con
 
     @Override
     public void addToTooltip(Item.TooltipContext context, Consumer<Component> consumer, TooltipFlag flag, DataComponentGetter components) {
+        if (!condition.contains(":")) {
+            return;
+        }
+        //Realmbinder.LOGGER.info(components.get(ModComponents.CONDITIONAL_TOOLTIP).toString());
         String[] processedCondition = condition.split(":");
         String conditionkey = "tooltip." + this.modid + "." + processedCondition[0];
+        //Realmbinder.LOGGER.info(Arrays.toString(processedCondition));
         if (Objects.equals(processedCondition[1], "false")) {
             consumer.accept(Component.translatable(conditionkey).withStyle(ChatFormatting.DARK_GRAY));
         } else if (Objects.equals(processedCondition[1], "true")) {

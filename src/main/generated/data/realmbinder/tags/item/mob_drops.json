@@ -21,6 +21,15 @@
       "id": "#c:bones",
       "required": false
     },
+    "minecraft:bone_block",
+    {
+      "id": "#minecraft:wool",
+      "required": false
+    },
+    {
+      "id": "#minecraft:wool_carpets",
+      "required": false
+    },
     {
       "id": "#c:eggs",
       "required": false
@@ -44,28 +53,6 @@
     {
       "id": "#c:ender_pearls",
       "required": false
-    },
-    {
-      "id": "#c:pumpkins",
-      "required": false
-    },
-    {
-      "id": "#c:storage_blocks/bone_meal",
-      "required": false
-    },
-    {
-      "id": "#c:storage_blocks/dried_kelp",
-      "required": false
-    },
-    {
-      "id": "#c:storage_blocks/wheat",
-      "required": false
-    },
-    {
-      "id": "#c:seeds",
-      "required": false
-    },
-    "minecraft:kelp",
-    "minecraft:dried_kelp"
+    }
   ]
 }

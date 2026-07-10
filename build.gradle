@@ -24,7 +24,7 @@ loom {
 		}
 	}
 
-	accessWidenerPath = file("src/client/resources/realmbinder.classtweaker")
+	accessWidenerPath = file("src/main/resources/realmbinder.classtweaker")
 
 }
 

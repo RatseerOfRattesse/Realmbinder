@@ -12,6 +12,7 @@
     {
       "id": "#c:storage_blocks/netherite",
       "required": false
-    }
+    },
+    "realmbinder:netherite_chisel"
   ]
 }

@@ -12,6 +12,7 @@ import net.minecraft.client.gui.screens.inventory.InventoryScreen;
 import net.minecraft.client.gui.screens.inventory.tooltip.*;
 import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.core.Position;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.locale.Language;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FormattedText;
@@ -23,6 +24,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.level.Level;
@@ -32,6 +34,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.ratseerofrattesse.realmbinder.Realmbinder;
 import net.ratseerofrattesse.realmbinder.component.ModComponents;
+import net.ratseerofrattesse.realmbinder.component.PlateMaterialComponent;
 import net.ratseerofrattesse.realmbinder.component.PotentiaComponent;
 import net.ratseerofrattesse.realmbinder.entity.attribute.ModAttributes;
 import net.ratseerofrattesse.realmbinder.item.ModItems;
@@ -43,7 +46,99 @@ import java.util.Objects;
 import java.util.Optional;
 
 public class HudRenderingEntrypoint{
+    public static void potentiaBar(AbstractContainerScreen<?> inventoryScreen, int scaledWidth, int scaledHeight, int invWidth, int invHeight, GuiGraphicsExtractor graphics) {
+        for (Slot slot : inventoryScreen.getMenu().slots) {
+            int guiSlotX = (slot.x + ((scaledWidth - invWidth)/2));
+            int guiSlotY = (slot.y + ((scaledHeight - invHeight)/2));
+            if (slot.getItem() != null) {
+                ItemStack itemStack = slot.getItem();
+                if(itemStack.get(ModComponents.POTENTIA) != null) {
+                    PotentiaComponent potentiaComponent = itemStack.get(ModComponents.POTENTIA);
+
+                    assert potentiaComponent != null;
+                    int potentia = potentiaComponent.potentia();
+                    int capacity = potentiaComponent.capacity();
+
+                    if (potentia == capacity) {
+                        //do nothing
+                    } else {
+                        double slice = (double) capacity / 14;
+                        for (int i = 0; i < 13; i++) {
+                            if (potentia <= slice*i) {
+                                Realmbinder.LOGGER.info(String.valueOf(i));
+                                Identifier texture = Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "textures/gui/sprites/potentia_bar/potentia" + i + ".png");
+                                graphics.blit(RenderPipelines.GUI_TEXTURED, texture, guiSlotX+2, guiSlotY+14, 0, 0, 13, 2, 13, 2);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     public static void initialize() {
+
+        //████   ███  █████ █████ █   █ █████ ███  ███     ████   ███  ████
+        //█   █ █   █   █   █     ██  █   █    █  █   █    █   █ █   █ █   █
+        //████  █   █   █   ████  █ █ █   █    █  █████    ████  █████ ████
+        //█     █   █   █   █     █  ██   █    █  █   █    █   █ █   █ █  █
+        //█      ███    █   █████ █   █   █   ███ █   █    ████  █   █ █   █
+
+        ScreenEvents.AFTER_INIT.register((client, screen, scaledWidth, scaledHeight) -> {
+            if (screen instanceof AbstractContainerScreen<?> abstractContainerScreen) {
+                ScreenEvents.afterExtract(screen).register((screen1, graphics, mouseX, mouseY, tickProgress) -> {
+                    Player player = client.player;
+                    assert player != null;
+
+                    if (player.gameMode() != null) {
+                        if (abstractContainerScreen.getMenu().getCarried().is(ModItems.PRECISE_RUNECARVER_LENS) || abstractContainerScreen.getMenu().getCarried().is(ModItems.RUNECARVER_LENS)) {
+                            //Realmbinder.LOGGER.info("yea");
+                            if (player.gameMode() == GameType.CREATIVE) {
+                                CreativeModeInventoryScreen inventoryScreen = (CreativeModeInventoryScreen) abstractContainerScreen;
+                                potentiaBar(inventoryScreen, scaledWidth, scaledHeight, inventoryScreen.imageWidth, inventoryScreen.imageHeight, graphics);
+                            } else {
+                                InventoryScreen inventoryScreen = (InventoryScreen) abstractContainerScreen;
+                                potentiaBar(inventoryScreen, scaledWidth, scaledHeight, inventoryScreen.imageWidth, inventoryScreen.imageHeight, graphics);
+                            }
+                        }
+                    }
+                });
+            }
+        });
+
+        //████  █      ███  █████ █████    █   █  ███  █████ █████ ████  ███  ███  █
+        //█   █ █     █   █   █   █        ██ ██ █   █   █   █     █   █  █  █   █ █
+        //████  █     █████   █   ████     █ █ █ █████   █   ████  ████   █  █████ █
+        //█     █     █   █   █   █        █   █ █   █   █   █     █  █   █  █   █ █
+        //█     █████ █   █   █   █████    █   █ █   █   █   █████ █   █ ███ █   █ █████
+
+        ScreenEvents.AFTER_INIT.register((client, screen, scaledWidth, scaledHeight) -> {
+            if (screen instanceof AbstractContainerScreen<?> abstractContainerScreen) {
+                ScreenEvents.afterBackground(screen).register((screen1, graphics, mouseX, mouseY, tickProgress) -> {
+                    Player player = client.player;
+                    assert player != null;
+
+                    if (player.gameMode() != null) {
+                        if ( player.gameMode() == GameType.CREATIVE) {
+                            CreativeModeInventoryScreen inventoryScreen = (CreativeModeInventoryScreen) abstractContainerScreen;
+                            plateMaterialIcon(inventoryScreen, scaledWidth, scaledHeight, inventoryScreen.imageWidth, inventoryScreen.imageHeight, graphics);
+                        } else {
+                            InventoryScreen inventoryScreen = (InventoryScreen) abstractContainerScreen;
+                            plateMaterialIcon(inventoryScreen, scaledWidth, scaledHeight, inventoryScreen.imageWidth, inventoryScreen.imageHeight, graphics);
+                        }
+                    }
+                });
+            }
+        });
+
+
+        //█     █████ █   █  ████    ███ █   █ █████  ███
+        //█     █     ██  █ █         █  ██  █ █     █   █
+        //█     ████  █ █ █  ███      █  █ █ █ ████  █   █
+        //█     █     █  ██     █     █  █  ██ █     █   █
+        //█████ █████ █   █ ████     ███ █   █ █      ███
+
         HudElementRegistry.addLast(Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "potentia"), (context, tickCounter) -> {
             Minecraft client = Minecraft.getInstance();
             if (client.player != null) {
@@ -129,7 +224,7 @@ public class HudRenderingEntrypoint{
         });
 
         //in inventory tooltips
-        ScreenEvents.BEFORE_INIT.register((client, screen, scaledWidth, scaledHeight) -> {
+        ScreenEvents.AFTER_INIT.register((client, screen, scaledWidth, scaledHeight) -> {
             if (screen instanceof AbstractContainerScreen<?> abstractContainerScreen) {
                 ScreenEvents.afterExtract(screen).register((screen1, graphics, mouseX, mouseY, tickProgress) -> {
                     Player player = client.player;
@@ -149,16 +244,19 @@ public class HudRenderingEntrypoint{
         });
     }
 
+    //████   ███  █████ █████ █   █ █████ ███  ███     █   █ █████ ███ █      ████
+    //█   █ █   █   █   █     ██  █   █    █  █   █    █   █   █    █  █     █
+    //████  █   █   █   ████  █ █ █   █    █  █████    █   █   █    █  █      ███
+    //█     █   █   █   █     █  ██   █    █  █   █    █   █   █    █  █         █
+    //█      ███    █   █████ █   █   █   ███ █   █     ███    █   ███ █████ ████
+
 
     public static void potentiaTooltip(AbstractContainerScreen<?> inventoryScreen, int mouseX, int mouseY, int scaledWidth, int scaledHeight, GuiGraphicsExtractor graphics, Minecraft client) {
         ItemStack heldStack = inventoryScreen.getMenu().getCarried();
 
-        int guiMouseX = (mouseX - ((scaledWidth - inventoryScreen.width)/2));
-        int guiMouseY = (mouseY - ((scaledHeight - inventoryScreen.height)/2));
-
         if (heldStack.is(ModItems.PRECISE_RUNECARVER_LENS)) {
-            if (inventoryScreen.getHoveredSlot(guiMouseX, guiMouseY) !=null) {
-                Slot slot = inventoryScreen.getHoveredSlot(guiMouseX, guiMouseY);
+            if (inventoryScreen.getHoveredSlot(mouseX, mouseY) !=null) {
+                Slot slot = inventoryScreen.getHoveredSlot(mouseX, mouseY);
                 if (slot.getItem() != null) {
                     ItemStack hoveredItem = slot.getItem();
                     if(hoveredItem.get(ModComponents.POTENTIA) != null) {
@@ -179,13 +277,13 @@ public class HudRenderingEntrypoint{
 
                         List<ClientTooltipComponent> components = List.of(ClientTooltipComponent.create(new PackTooltipComponent(Optional.of(title), Optional.of(description))));
 
-                        graphics.tooltip(client.font, components, guiMouseX, guiMouseY, DefaultTooltipPositioner.INSTANCE, null);
+                        graphics.tooltip(client.font, components, mouseX, mouseY, DefaultTooltipPositioner.INSTANCE, null);
                     }
                 }
             }
         } else if (heldStack.is(ModItems.RUNECARVER_LENS)) {
-            if (inventoryScreen.getHoveredSlot(guiMouseX, guiMouseY) !=null) {
-                Slot slot = inventoryScreen.getHoveredSlot(guiMouseX, guiMouseY);
+            if (inventoryScreen.getHoveredSlot(mouseX, mouseY) !=null) {
+                Slot slot = inventoryScreen.getHoveredSlot(mouseX, mouseY);
                 if (slot.getItem() != null) {
                     ItemStack hoveredItem = slot.getItem();
                     if(hoveredItem.get(ModComponents.POTENTIA) != null) {
@@ -216,22 +314,22 @@ public class HudRenderingEntrypoint{
                             texture = spriteId.texture();
                              */
                             Identifier texture = Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "textures/particle/loruhn_particle/frame0001.png");
-                            graphics.blit(RenderPipelines.GUI_TEXTURED, texture, guiMouseX, guiMouseY, 0, 0, 16, 16, 16, 16);
+                            graphics.blit(RenderPipelines.GUI_TEXTURED, texture, mouseX, mouseY, 0, 0, 16, 16, 16, 16);
                         } else if (potentia < 200) {
                             Identifier texture = Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "textures/particle/lorahn_particle/frame0001.png");
-                            graphics.blit(RenderPipelines.GUI_TEXTURED, texture, guiMouseX, guiMouseY, 0, 0, 16, 16, 16, 16);
+                            graphics.blit(RenderPipelines.GUI_TEXTURED, texture, mouseX, mouseY, 0, 0, 16, 16, 16, 16);
                         } else if (potentia < 2000) {
                             Identifier texture = Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "textures/particle/lodahr_particle/frame0001.png");
-                            graphics.blit(RenderPipelines.GUI_TEXTURED, texture, guiMouseX, guiMouseY, 0, 0, 16, 16, 16, 16);
+                            graphics.blit(RenderPipelines.GUI_TEXTURED, texture, mouseX, mouseY, 0, 0, 16, 16, 16, 16);
                         } else if (potentia < 10000) {
                             Identifier texture = Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "textures/particle/torahn_particle/frame0001.png");
-                            graphics.blit(RenderPipelines.GUI_TEXTURED, texture, guiMouseX, guiMouseY, 0, 0, 16, 16, 16, 16);
+                            graphics.blit(RenderPipelines.GUI_TEXTURED, texture, mouseX, mouseY, 0, 0, 16, 16, 16, 16);
                         } else if (potentia < 20000) {
                             Identifier texture = Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "textures/particle/loveruhkt_particle/frame0001.png");
-                            graphics.blit(RenderPipelines.GUI_TEXTURED, texture, guiMouseX, guiMouseY, 0, 0, 16, 16, 16, 16);
+                            graphics.blit(RenderPipelines.GUI_TEXTURED, texture, mouseX, mouseY, 0, 0, 16, 16, 16, 16);
                         } else if (potentia > 20000) {
                             Identifier texture = Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "textures/particle/void_particle/frame0001.png");
-                            graphics.blit(RenderPipelines.GUI_TEXTURED, texture, guiMouseX, guiMouseY, 0, 0, 16, 16, 16, 16);
+                            graphics.blit(RenderPipelines.GUI_TEXTURED, texture, mouseX, mouseY, 0, 0, 16, 16, 16, 16);
                         }
                     }
                 }
@@ -267,5 +365,33 @@ public class HudRenderingEntrypoint{
         }
 
         return new PotentiaGetter(null, null, null, null);
+    }
+
+
+    //████  █      ███  █████ █████    █   █  ███  █████ █████ ████  ███  ███  █        █   █ █████ ███ █      ████
+    //█   █ █     █   █   █   █        ██ ██ █   █   █   █     █   █  █  █   █ █        █   █   █    █  █     █
+    //████  █     █████   █   ████     █ █ █ █████   █   ████  ████   █  █████ █        █   █   █    █  █      ███
+    //█     █     █   █   █   █        █   █ █   █   █   █     █  █   █  █   █ █        █   █   █    █  █         █
+    //█     █████ █   █   █   █████    █   █ █   █   █   █████ █   █ ███ █   █ █████     ███    █   ███ █████ ████
+
+    public static void plateMaterialIcon(AbstractContainerScreen<?> inventoryScreen, int scaledWidth, int scaledHeight, int invWidth, int invHeight, GuiGraphicsExtractor graphics) {
+        for (Slot slot : inventoryScreen.getMenu().slots) {
+            int guiSlotX = (slot.x + ((scaledWidth - invWidth)/2));
+            int guiSlotY = (slot.y + ((scaledHeight - invHeight)/2));
+            if (slot.getItem() != null) {
+                ItemStack itemStack = slot.getItem();
+                if(itemStack.get(ModComponents.PLATE_MATERIAL) != null) {
+                    PlateMaterialComponent plateMaterialComponent = itemStack.get(ModComponents.PLATE_MATERIAL);
+
+                    assert plateMaterialComponent != null;
+                    String itemId = plateMaterialComponent.itemId();
+                    String[] processedString = itemId.split(":");
+                    Identifier itemIdentifier = Identifier.fromNamespaceAndPath(processedString[0], processedString[1]);
+
+                    Identifier texture = Identifier.fromNamespaceAndPath(itemIdentifier.getNamespace(), "textures/item/" + itemIdentifier.getPath() + ".png");
+                    graphics.blit(RenderPipelines.GUI_TEXTURED, texture, guiSlotX, guiSlotY, 0, 0, 8, 8, 8, 8);
+                }
+            }
+        }
     }
 }

@@ -1,0 +1,10 @@
+{
+  "replace": true,
+  "values": [
+    "realmbinder:copper_chisel",
+    {
+      "id": "#realmbinder:processes_mining_level_two",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "replace": true,
+  "values": [
+    "realmbinder:diamond_chisel",
+    "realmbinder:netherite_chisel",
+    {
+      "id": "#realmbinder:processes_mining_level_four",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "replace": true,
+  "values": [
+    "realmbinder:mendarum_chisel",
+    "realmbinder:mendarum_shard"
+  ]
+}

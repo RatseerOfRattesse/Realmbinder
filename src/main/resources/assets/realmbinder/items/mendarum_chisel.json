@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "realmbinder:item/mendarum_chisel",
+    "tints": [
+      {
+        "type": "realmbinder:vanilla_colour",
+        "color": -16728065
+      }
+    ]
+  }
+}

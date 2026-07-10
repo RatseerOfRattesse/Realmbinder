@@ -8,13 +8,20 @@ import net.minecraft.world.item.Item;
 import net.ratseerofrattesse.realmbinder.Realmbinder;
 
 public class ModTags {
-    public static final TagKey<Item> PRESET_POTENTIA = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "preset_potentia"));
-    public static final TagKey<Item> LORUHN = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "loruhn"));
-    public static final TagKey<Item> LORAHN = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "lorahn"));
-    public static final TagKey<Item> LODAHR = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "lodahr"));
-    public static final TagKey<Item> TORAHN = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "torahn"));
-    public static final TagKey<Item> LOVERUHKT = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "loveruhkt"));
-    public static final TagKey<Item> VOID = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "void"));
+    public static final TagKey<Item> PROCESSES_MINING_LEVEL_ONE = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "processes_mining_level_one"));
+    public static final TagKey<Item> PROCESSES_MINING_LEVEL_TWO = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "processes_mining_level_two"));
+    public static final TagKey<Item> PROCESSES_MINING_LEVEL_THREE = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "processes_mining_level_three"));
+    public static final TagKey<Item> PROCESSES_MINING_LEVEL_FOUR = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "processes_mining_level_four"));
+    public static final TagKey<Item> PROCESSES_MINING_LEVEL_FIVE = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "processes_mining_level_five"));
+    public static final TagKey<Item> PROCESSES_MINING_LEVEL_SIX = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "processes_mining_level_six"));
+    public static final TagKey<Item> MINING_LEVEL_ONE = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "mining_level_one"));
+    public static final TagKey<Item> MINING_LEVEL_TWO = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "mining_level_two"));
+    public static final TagKey<Item> MINING_LEVEL_THREE = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "mining_level_three"));
+    public static final TagKey<Item> MINING_LEVEL_FOUR = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "mining_level_four"));
+    public static final TagKey<Item> MINING_LEVEL_FIVE = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "mining_level_five"));
+    public static final TagKey<Item> MINING_LEVEL_SIX = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "mining_level_six"));
+    public static final TagKey<Item> PLATE_MATERIAL = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "plate_material"));
+    public static final TagKey<Item> CHISELS = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "chisels"));
     public static final TagKey<Item> PLANT_MATTER = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "plant_matter"));
     public static final TagKey<Item> IRON = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "iron"));
     public static final TagKey<Item> GOLD = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "gold"));
@@ -29,6 +36,7 @@ public class ModTags {
     public static final TagKey<Item> REDSTONE = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "redstone"));
     public static final TagKey<Item> PRISMARINE = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "prismarine"));
     public static final TagKey<Item> LEATHER = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "leather"));
+    public static final TagKey<Item> MENDARUM = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "mendarum"));
     public static final TagKey<Item> REHNTITE = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "rehntite"));
     public static final TagKey<Item> RESIN = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "resin"));
     public static final TagKey<Item> MOB_DROPS = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "mob_drops"));

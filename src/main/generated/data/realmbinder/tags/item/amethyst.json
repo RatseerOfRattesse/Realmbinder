@@ -4,6 +4,8 @@
     {
       "id": "#c:gems/amethyst",
       "required": false
-    }
+    },
+    "minecraft:amethyst_block",
+    "minecraft:amethyst_cluster"
   ]
 }

@@ -4,7 +4,9 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
+import net.ratseerofrattesse.realmbinder.item.ModItems;
 import net.ratseerofrattesse.realmbinder.tag.ModTags;
 
 import java.util.concurrent.CompletableFuture;
@@ -27,13 +29,106 @@ public class ModItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider wrapperLookup) {
-        valueLookupBuilder(ModTags.PRESET_POTENTIA)
-                .addOptionalTag(ModTags.LORUHN)
-                .addOptionalTag(ModTags.LORAHN)
-                .addOptionalTag(ModTags.LODAHR)
-                .addOptionalTag(ModTags.TORAHN)
-                .addOptionalTag(ModTags.LOVERUHKT)
-                .addOptionalTag(ModTags.VOID)
+        valueLookupBuilder(ItemTags.DURABILITY_ENCHANTABLE)
+                .addOptionalTag(ModTags.CHISELS)
+                .setReplace(true);
+        valueLookupBuilder(ModTags.PLATE_MATERIAL)
+                .addOptionalTag(ConventionalItemTags.STONES)
+                .addOptionalTag(ConventionalItemTags.END_STONES)
+                .addOptionalTag(ConventionalItemTags.NETHERRACKS)
+                .addOptionalTag(ConventionalItemTags.NATURAL_WOODS)
+                .addOptionalTag(ConventionalItemTags.NATURAL_LOGS)
+                .addOptionalTag(ConventionalItemTags.STRIPPED_WOODS)
+                .addOptionalTag(ConventionalItemTags.STRIPPED_LOGS)
+                .addOptionalTag(ConventionalItemTags.LEATHERS)
+                .addOptionalTag(ConventionalItemTags.BONES)
+                .add(Items.BONE_BLOCK)
+                .addOptionalTag(ItemTags.WOOL)
+                .addOptionalTag(ItemTags.WOOL_CARPETS)
+                .addOptionalTag(ConventionalItemTags.BLAZE_RODS)
+                .addOptionalTag(ConventionalItemTags.BREEZE_RODS)
+                .addOptionalTag(ConventionalItemTags.ENDER_PEARLS)
+                .addOptionalTag(ModTags.IRON)
+                .addOptionalTag(ModTags.COPPER)
+                .addOptionalTag(ModTags.GOLD)
+                .addOptionalTag(ModTags.DIAMOND)
+                .addOptionalTag(ModTags.EMERALD)
+                .addOptionalTag(ModTags.AMETHYST)
+                .addOptionalTag(ModTags.NETHERITE)
+                .addOptionalTag(ModTags.MENDARUM)
+                .addOptionalTag(ModTags.REHNTITE)
+                .addOptionalTag(ModTags.LAPIS)
+                .addOptionalTag(ModTags.REDSTONE)
+                .addOptionalTag(ModTags.QUARTZ)
+                .addOptionalTag(ModTags.COAL)
+                .addOptionalTag(ModTags.RESIN)
+                .addOptionalTag(ModTags.PRISMARINE)
+                .removeTag(ModTags.CHISELS)
+                .addOptionalTag(ConventionalItemTags.OBSIDIANS)
+                .addOptionalTag(ConventionalItemTags.CRYING_OBSIDIANS)
+                .setReplace(true);
+        valueLookupBuilder(ModTags.CHISELS)
+                .add(ModItems.IRON_CHISEL)
+                .add(ModItems.COPPER_CHISEL)
+                .add(ModItems.GOLD_CHISEL)
+                .add(ModItems.DIAMOND_CHISEL)
+                .add(ModItems.MENDARUM_CHISEL)
+                .add(ModItems.NETHERITE_CHISEL)
+                .add(ModItems.REHNTITE_CHISEL)
+                .setReplace(true);
+        valueLookupBuilder(ModTags.PROCESSES_MINING_LEVEL_ONE)
+                .add(ModItems.COPPER_CHISEL)
+                .addOptionalTag(ModTags.PROCESSES_MINING_LEVEL_TWO)
+                .setReplace(true);
+        valueLookupBuilder(ModTags.PROCESSES_MINING_LEVEL_TWO)
+                .add(ModItems.IRON_CHISEL)
+                .addOptionalTag(ModTags.PROCESSES_MINING_LEVEL_THREE)
+                .setReplace(true);
+        valueLookupBuilder(ModTags.PROCESSES_MINING_LEVEL_THREE)
+                .add(ModItems.DIAMOND_CHISEL)
+                .add(ModItems.NETHERITE_CHISEL)
+                .addOptionalTag(ModTags.PROCESSES_MINING_LEVEL_FOUR)
+                .setReplace(true);
+        valueLookupBuilder(ModTags.PROCESSES_MINING_LEVEL_FOUR)
+                .add(ModItems.NETHERITE_CHISEL)
+                .addOptionalTag(ModTags.PROCESSES_MINING_LEVEL_FIVE)
+                .setReplace(true);
+        valueLookupBuilder(ModTags.PROCESSES_MINING_LEVEL_FIVE)
+                .add(ModItems.MENDARUM_CHISEL)
+                .addOptionalTag(ModTags.PROCESSES_MINING_LEVEL_SIX)
+                .setReplace(true);
+        valueLookupBuilder(ModTags.PROCESSES_MINING_LEVEL_SIX)
+                .add(ModItems.REHNTITE_CHISEL)
+                .setReplace(true);
+        valueLookupBuilder(ModTags.MINING_LEVEL_ONE)
+                .addOptionalTag(ModTags.IRON)
+                .addOptionalTag(ModTags.COPPER)
+                .addOptionalTag(ModTags.COAL)
+                .addOptionalTag(ModTags.LAPIS)
+                .setReplace(true);
+        valueLookupBuilder(ModTags.MINING_LEVEL_TWO)
+                .addOptionalTag(ModTags.GOLD)
+                .addOptionalTag(ModTags.EMERALD)
+                .addOptionalTag(ModTags.DIAMOND)
+                .addOptionalTag(ModTags.REDSTONE)
+                .setReplace(true);
+        valueLookupBuilder(ModTags.MINING_LEVEL_THREE)
+                .addOptionalTag(ModTags.NETHERITE)
+                .addOptionalTag(ConventionalItemTags.OBSIDIANS)
+                .setReplace(true);
+        valueLookupBuilder(ModTags.MINING_LEVEL_FOUR)
+                .addOptionalTag(ModTags.MENDARUM)
+                .setReplace(true);
+        valueLookupBuilder(ModTags.MINING_LEVEL_FIVE)
+                .addOptionalTag(ModTags.REHNTITE)
+                .setReplace(true);
+        valueLookupBuilder(ModTags.MENDARUM)
+                .add(ModItems.MENDARUM_CHISEL)
+                .add(ModItems.MENDARUM_SHARD)
+                .setReplace(true);
+        valueLookupBuilder(ModTags.REHNTITE)
+                .add(ModItems.REHNTITE_CHISEL)
+                .add(ModItems.REHNTITE_INGOT)
                 .setReplace(true);
         valueLookupBuilder(ModTags.PLANT_MATTER)
                 .addOptionalTag(ConventionalItemTags.WOODEN_BARRELS)
@@ -72,19 +167,15 @@ public class ModItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
                 .addOptionalTag(ConventionalItemTags.STRINGS)
                 .addOptionalTag(ConventionalItemTags.LEATHERS)
                 .addOptionalTag(ConventionalItemTags.BONES)
+                .add(Items.BONE_BLOCK)
+                .addOptionalTag(ItemTags.WOOL)
+                .addOptionalTag(ItemTags.WOOL_CARPETS)
                 .addOptionalTag(ConventionalItemTags.EGGS)
                 .addOptionalTag(ConventionalItemTags.FEATHERS)
                 .addOptionalTag(ConventionalItemTags.GUNPOWDERS)
                 .addOptionalTag(ConventionalItemTags.BLAZE_RODS)
                 .addOptionalTag(ConventionalItemTags.BREEZE_RODS)
                 .addOptionalTag(ConventionalItemTags.ENDER_PEARLS)
-                .addOptionalTag(ConventionalItemTags.PUMPKINS)
-                .addOptionalTag(ConventionalItemTags.STORAGE_BLOCKS_BONE_MEAL)
-                .addOptionalTag(ConventionalItemTags.STORAGE_BLOCKS_DRIED_KELP)
-                .addOptionalTag(ConventionalItemTags.STORAGE_BLOCKS_WHEAT)
-                .addOptionalTag(ConventionalItemTags.SEEDS)
-                .add(Items.KELP)
-                .add(Items.DRIED_KELP)
                 .setReplace(true);
         valueLookupBuilder(ModTags.IRON)
                 .addOptionalTag(ConventionalItemTags.IRON_INGOTS)
@@ -94,6 +185,7 @@ public class ModItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
                 .addOptionalTag(ConventionalItemTags.IRON_RAW_MATERIALS)
                 .addOptionalTag(ConventionalItemTags.STORAGE_BLOCKS_RAW_IRON)
                 .addOptionalTag(ConventionalItemTags.STORAGE_BLOCKS_IRON)
+                .add(ModItems.IRON_CHISEL)
                 .add(Items.BUCKET)
                 .add(Items.WATER_BUCKET)
                 .add(Items.LAVA_BUCKET)
@@ -107,6 +199,7 @@ public class ModItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
                 .addOptionalTag(ConventionalItemTags.COPPER_RAW_MATERIALS)
                 .addOptionalTag(ConventionalItemTags.STORAGE_BLOCKS_RAW_COPPER)
                 .addOptionalTag(ConventionalItemTags.STORAGE_BLOCKS_COPPER)
+                .add(ModItems.COPPER_CHISEL)
                 .setReplace(true);
         valueLookupBuilder(ModTags.GOLD)
                 .addOptionalTag(ConventionalItemTags.GOLD_INGOTS)
@@ -115,16 +208,19 @@ public class ModItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
                 .addOptionalTag(ConventionalItemTags.GOLD_RAW_MATERIALS)
                 .addOptionalTag(ConventionalItemTags.STORAGE_BLOCKS_RAW_GOLD)
                 .addOptionalTag(ConventionalItemTags.STORAGE_BLOCKS_GOLD)
+                .add(ModItems.GOLD_CHISEL)
                 .setReplace(true);
         valueLookupBuilder(ModTags.NETHERITE)
                 .addOptionalTag(ConventionalItemTags.NETHERITE_INGOTS)
                 .addOptionalTag(ConventionalItemTags.NETHERITE_SCRAP_ORES)
                 .addOptionalTag(ConventionalItemTags.STORAGE_BLOCKS_NETHERITE)
+                .add(ModItems.NETHERITE_CHISEL)
                 .setReplace(true);
         valueLookupBuilder(ModTags.DIAMOND)
                 .addOptionalTag(ConventionalItemTags.DIAMOND_GEMS)
                 .addOptionalTag(ConventionalItemTags.DIAMOND_ORES)
                 .addOptionalTag(ConventionalItemTags.STORAGE_BLOCKS_DIAMOND)
+                .add(ModItems.DIAMOND_CHISEL)
                 .setReplace(true);
         valueLookupBuilder(ModTags.EMERALD)
                 .addOptionalTag(ConventionalItemTags.EMERALD_GEMS)
@@ -147,9 +243,22 @@ public class ModItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
                 .setReplace(true);
         valueLookupBuilder(ModTags.AMETHYST)
                 .addOptionalTag(ConventionalItemTags.AMETHYST_GEMS)
+                .add(Items.AMETHYST_BLOCK)
+                .add(Items.AMETHYST_CLUSTER)
                 .setReplace(true);
         valueLookupBuilder(ModTags.PRISMARINE)
                 .addOptionalTag(ConventionalItemTags.PRISMARINE_GEMS)
+                .add(Items.PRISMARINE)
+                .add(Items.PRISMARINE_BRICK_SLAB)
+                .add(Items.PRISMARINE_BRICKS)
+                .add(Items.PRISMARINE_BRICK_STAIRS)
+                .add(Items.PRISMARINE_SHARD)
+                .add(Items.PRISMARINE_SLAB)
+                .add(Items.PRISMARINE_STAIRS)
+                .add(Items.PRISMARINE_WALL)
+                .add(Items.DARK_PRISMARINE)
+                .add(Items.DARK_PRISMARINE_STAIRS)
+                .add(Items.DARK_PRISMARINE_SLAB)
                 .setReplace(true);
         valueLookupBuilder(ModTags.COAL)
                 .addOptionalTag(ConventionalItemTags.COAL_ORES)

@@ -9,11 +9,9 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.*;
 import net.ratseerofrattesse.realmbinder.Realmbinder;
-import net.ratseerofrattesse.realmbinder.component.ConditionalTooltipComponent;
-import net.ratseerofrattesse.realmbinder.component.ModComponents;
-import net.ratseerofrattesse.realmbinder.component.PotentiaComponent;
-import net.ratseerofrattesse.realmbinder.component.TooltipComponent;
+import net.ratseerofrattesse.realmbinder.component.*;
 
+import java.util.List;
 import java.util.function.Function;
 
 public class ModItems {
@@ -36,7 +34,7 @@ public class ModItems {
 
     public static final Item DEBUGGER = register("debugger", Item::new, new Item.Properties()
                     .rarity(Rarity.EPIC)
-                    .component(ModComponents.POTENTIA, new PotentiaComponent(1000, 1000))
+                    .component(ModComponents.POTENTIA, new PotentiaComponent(500, 1000))
                     .stacksTo(1));
 
     public static final Item PRECISE_RUNECARVER_LENS = register("precise_runecarver_lens", Item::new, new Item.Properties()
@@ -64,19 +62,177 @@ public class ModItems {
                             "runecarver_lens.selected_inventory,gold","realmbinder", "shift:false"))
             .stacksTo(1));
 
+    public static final Item MATERIAL_PLATE = register("material_plate", MaterialPlateItem::new, new Item.Properties()
+            .component(ModComponents.PLATE_MATERIAL, new PlateMaterialComponent("realmbinder:material_plate"))
+            .component(ModComponents.CONDITIONAL_TOOLTIP, new ConditionalTooltipComponent(
+                    "material_plate,gold",
+                    "realmbinder", "shift:false"
+            )));
+
+
+    public static final Item IRON_CHISEL = register("iron_chisel", ChiselItem::new, new Item.Properties()
+            .stacksTo(1)
+            .durability(250)
+            .component(ModComponents.TOOLTIP, new TooltipComponent("chisel,gray", "realmbinder"))
+            .component(ModComponents.CONDITIONAL_TOOLTIP, new ConditionalTooltipComponent(
+                    "chisel.plate,gold " +
+                            "empty,gray " +
+                            "rclick,gray " +
+                            "chisel.single,gold " +
+                            "empty,gray " +
+                            "shiftrclick,gray " +
+                            "chisel.stack,gold " +
+                            "empty,gray " +
+                            "rclick_carve,gray " +
+                            "chisel.carve,gold",
+                    "realmbinder", "shift:false"
+            )));
+    public static final Item COPPER_CHISEL = register("copper_chisel", ChiselItem::new, new Item.Properties()
+            .stacksTo(1)
+            .durability(191)
+            .component(ModComponents.TOOLTIP, new TooltipComponent("chisel,gray", "realmbinder"))
+            .component(ModComponents.CONDITIONAL_TOOLTIP, new ConditionalTooltipComponent(
+                    "chisel.plate,gold " +
+                            "empty,gray " +
+                            "rclick,gray " +
+                            "chisel.single,gold " +
+                            "empty,gray " +
+                            "shiftrclick,gray " +
+                            "chisel.stack,gold " +
+                            "empty,gray " +
+                            "rclick_carve,gray " +
+                            "chisel.carve,gold",
+                    "realmbinder", "shift:false"
+            )));
+    public static final Item GOLD_CHISEL = register("gold_chisel", ChiselItem::new, new Item.Properties()
+            .stacksTo(1)
+            .durability(32)
+            .component(ModComponents.TOOLTIP, new TooltipComponent("chisel,gray", "realmbinder"))
+            .component(ModComponents.CONDITIONAL_TOOLTIP, new ConditionalTooltipComponent(
+                    "chisel.plate,gold " +
+                            "empty,gray " +
+                            "rclick,gray " +
+                            "chisel.single,gold " +
+                            "empty,gray " +
+                            "shiftrclick,gray " +
+                            "chisel.stack,gold " +
+                            "empty,gray " +
+                            "rclick_carve,gray " +
+                            "chisel.carve,gold",
+                    "realmbinder", "shift:false"
+            )));
+    public static final Item DIAMOND_CHISEL = register("diamond_chisel", ChiselItem::new, new Item.Properties()
+            .stacksTo(1)
+            .durability(1561)
+            .component(ModComponents.TOOLTIP, new TooltipComponent("chisel,gray", "realmbinder"))
+            .component(ModComponents.CONDITIONAL_TOOLTIP, new ConditionalTooltipComponent(
+                    "chisel.plate,gold " +
+                            "empty,gray " +
+                            "rclick,gray " +
+                            "chisel.single,gold " +
+                            "empty,gray " +
+                            "shiftrclick,gray " +
+                            "chisel.stack,gold " +
+                            "empty,gray " +
+                            "rclick_carve,gray " +
+                            "chisel.carve,gold",
+                    "realmbinder", "shift:false"
+            )));
+    public static final Item NETHERITE_CHISEL = register("netherite_chisel", ChiselItem::new, new Item.Properties()
+            .stacksTo(1)
+            .durability(2031)
+            .component(ModComponents.TOOLTIP, new TooltipComponent("chisel,gray", "realmbinder"))
+            .component(ModComponents.CONDITIONAL_TOOLTIP, new ConditionalTooltipComponent(
+                    "chisel.plate,gold " +
+                            "empty,gray " +
+                            "rclick,gray " +
+                            "chisel.single,gold " +
+                            "empty,gray " +
+                            "shiftrclick,gray " +
+                            "chisel.stack,gold " +
+                            "empty,gray " +
+                            "rclick_carve,gray " +
+                            "chisel.carve,gold",
+                    "realmbinder", "shift:false"
+            )));
+    public static final Item MENDARUM_CHISEL = register("mendarum_chisel", ChiselItem::new, new Item.Properties()
+            .stacksTo(1)
+            .durability(256)
+            .component(ModComponents.TOOLTIP, new TooltipComponent("chisel,gray", "realmbinder"))
+            .component(ModComponents.CONDITIONAL_TOOLTIP, new ConditionalTooltipComponent(
+                    "chisel.plate,gold " +
+                            "empty,gray " +
+                            "rclick,gray " +
+                            "chisel.single,gold " +
+                            "empty,gray " +
+                            "shiftrclick,gray " +
+                            "chisel.stack,gold " +
+                            "empty,gray " +
+                            "rclick_carve,gray " +
+                            "chisel.carve,gold",
+                    "realmbinder", "shift:false"
+            )));
+    public static final Item REHNTITE_CHISEL = register("rehntite_chisel", ChiselItem::new, new Item.Properties()
+            .stacksTo(1)
+            .durability(4096)
+            .component(ModComponents.TOOLTIP, new TooltipComponent("chisel,gray", "realmbinder"))
+            .component(ModComponents.CONDITIONAL_TOOLTIP, new ConditionalTooltipComponent(
+                    "chisel.plate,gold " +
+                            "empty,gray " +
+                            "rclick,gray " +
+                            "chisel.single,gold " +
+                            "empty,gray " +
+                            "shiftrclick,gray " +
+                            "chisel.stack,gold " +
+                            "empty,gray " +
+                            "rclick_carve,gray " +
+                            "chisel.carve,gold",
+                    "realmbinder", "shift:false"
+            )));
+
+    public static final Item MENDARUM_SHARD = register("mendarum_shard", Item::new, new Item.Properties()
+            .component(ModComponents.TOOLTIP, new TooltipComponent(
+                    "mendarum,gray",
+                    "realmbinder"
+            )));
+    public static final Item REHNTITE_INGOT = register("rehntite_ingot", Item::new, new Item.Properties()
+            .component(ModComponents.TOOLTIP, new TooltipComponent(
+                    "rehntite,gray",
+                    "realmbinder"
+            )));
+
     public static final ResourceKey<CreativeModeTab> REALMBINDER_KEY = ResourceKey.create(
             BuiltInRegistries.CREATIVE_MODE_TAB.key(), Identifier.fromNamespaceAndPath(Realmbinder.MOD_ID, "creative_tab")
     );
-
 
     public static final CreativeModeTab REALMBINDER = FabricCreativeModeTab.builder()
             .icon(() -> new ItemStack(ModItems.DEBUGGER))
             .title(Component.translatable("realmbinder.tab"))
             .displayItems((params, output) -> {
+                ItemStack lapisPlate = new ItemStack(ModItems.MATERIAL_PLATE);
+                lapisPlate.set(ModComponents.PLATE_MATERIAL, new PlateMaterialComponent("minecraft:lapis_lazuli"));
+                List<String> colours = List.of("white", "light_gray", "gray", "black", "brown", "red", "orange", "yellow", "lime", "green", "cyan", "light_blue", "blue", "purple", "magenta", "pink");
+                for (String colour : colours) {
+                    ItemStack mendarumShard = new ItemStack(ModItems.MENDARUM_SHARD);
+                    mendarumShard.set(ModComponents.VANILLA_COLOUR, new VanillaColourComponent(colour));
+                    output.accept(mendarumShard);
+                }
+                output.accept(ModItems.REHNTITE_INGOT);
+                output.accept(lapisPlate);
+                output.accept(ModItems.IRON_CHISEL);
+                output.accept(ModItems.COPPER_CHISEL);
+                output.accept(ModItems.GOLD_CHISEL);
+                output.accept(ModItems.DIAMOND_CHISEL);
+                output.accept(ModItems.NETHERITE_CHISEL);
+                ItemStack mendarumChisel = new ItemStack(ModItems.MENDARUM_CHISEL);
+                mendarumChisel.set(ModComponents.VANILLA_COLOUR, new VanillaColourComponent("magenta"));
+                output.accept(mendarumChisel);
+                output.accept(ModItems.REHNTITE_CHISEL);
                 output.accept(ModItems.RUNECARVER_LENS);
                 output.accept(ModItems.PRECISE_RUNECARVER_LENS);
-                output.accept(Items.FEATHER);
                 output.accept(ModItems.DEBUGGER);
+                output.accept(Items.FEATHER);
+
             })
             .build();
 }
